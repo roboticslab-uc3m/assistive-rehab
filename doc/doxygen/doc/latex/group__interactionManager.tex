@@ -1,0 +1,47 @@
+\section{interaction\+Manager}
+\label{group__interactionManager}\index{interactionManager@{interactionManager}}
+
+
+This module is responsible for supervising the interaction among all modules involved in the assistive rehab demo.  
+
+
+This module is responsible for supervising the interaction among all modules involved in the assistive rehab demo. 
+
+Version\+:0.\+2.\+0 \begin{DoxyAuthor}{Author}
+Ugo Pattacini \href{mailto:ugo.pattacini@iit.it}{\texttt{ ugo.\+pattacini@iit.\+it}}, Valentina Vasco \href{mailto:valentina.vasco@iit.it}{\texttt{ valentina.\+vasco@iit.\+it}} ~\newline
+ 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Released under the terms of the B\+SD 3-\/Clause License. 
+\end{DoxyCopyright}
+\hypertarget{group__skeletonViewer_intro_sec}{}\subsection{Description}\label{group__skeletonViewer_intro_sec}
+This module supervises the interaction among all modules involved in the assistive rehab demo. Specifically, it is responsible for\+:
+\begin{DoxyItemize}
+\item engaging/disengaging a user in front of the robot (settable with the parameters engage-\/distance and engage-\/azimuth), by interacting with \mbox{\hyperlink{group__attentionManager}{attention\+Manager}};
+\item starting/stopping the real-\/time motion analysis, by interacting with \mbox{\hyperlink{group__motionAnalyzer}{motion\+Analyzer}};
+\item controlling the robot\textquotesingle{}s movements to physically show the exercises, by sending commands to ctp\+Service for range of motion movements and to cer\+\_\+reaching-\/controller for reaching movements. Possible movements and commands sent to the ports are defined in the move-\/file bash script
+\item managing the verbal interaction.
+\end{DoxyItemize}\hypertarget{group__skeletonViewer_parameters_sec}{}\subsection{Parameters}\label{group__skeletonViewer_parameters_sec}
+
+\begin{DoxyItemize}
+\item --period\+: Periodicity of the module.
+\item --speak-\/file\+: Configuration file name for the speak.
+\item --move-\/file\+: Script file for robot\textquotesingle{}s movements.
+\item --engage-\/distance\+: User engaged within this distance (m).
+\item --engage-\/azimuth\+: User engaged within this field of view (degrees). 
+\end{DoxyItemize}\hypertarget{group__skeletonViewer_inputports_sec}{}\subsection{Input Ports}\label{group__skeletonViewer_inputports_sec}
+
+\begin{DoxyItemize}
+\item /interaction\+Manager/synthetizer\+:i \mbox{[}Bottle\mbox{]} \mbox{[}default carrier\+:\mbox{]}\+: Receives the score associated to the performed exercise. To be connected to /feedback\+Synthetizer/score\+:o.
+\end{DoxyItemize}\hypertarget{group__skeletonViewer_outputports_sec}{}\subsection{Output Ports}\label{group__skeletonViewer_outputports_sec}
+
+\begin{DoxyItemize}
+\item /interaction\+Manager/attention\+:rpc \mbox{[}rpc\mbox{]} \mbox{[}default carrier\+:\mbox{]}\+: Sends commands to \mbox{\hyperlink{group__attentionManager}{attention\+Manager}} to redirect the robot\textquotesingle{}s gaze toward the engaged user.
+\item /interaction\+Manager/analyzer\+:rpc \mbox{[}rpc\mbox{]} \mbox{[}default carrier\+:\mbox{]}\+: Sends commands to \mbox{\hyperlink{group__motionAnalyzer}{motion\+Analyzer}} for starting/stopping the real-\/time motion analysis.
+\item /interaction\+Manager/speech\+:rpc \mbox{[}rpc\mbox{]} \mbox{[}default carrier\+:\mbox{]}\+: Sends commands to i\+Speak to wait until the sentence is spoken.
+\item /interaction\+Manager/speech\+:o \mbox{[}Bottle\mbox{]} \mbox{[}default carrier\+:\mbox{]}\+: Streams out the verbal interaction. To be connected to i\+Speak.
+\end{DoxyItemize}\hypertarget{group__skeletonViewer_services_sec}{}\subsection{Services}\label{group__skeletonViewer_services_sec}
+
+\begin{DoxyItemize}
+\item /interaction\+Manager/cmd\+:rpc \mbox{[}rpc-\/server\mbox{]}\+: service port . This service is described in \mbox{\hyperlink{classinteractionManager__IDL}{interaction\+Manager\+\_\+\+I\+DL}} (idl.\+thrift) 
+\end{DoxyItemize}

@@ -1,0 +1,58 @@
+\section{motion\+Analyzer}
+\label{group__motionAnalyzer}\index{motionAnalyzer@{motionAnalyzer}}
+
+
+This module is responsible for analyzing the performed movement in real-\/time.  
+
+
+This module is responsible for analyzing the performed movement in real-\/time. 
+
+Version\+:0.\+2.\+0 \begin{DoxyAuthor}{Author}
+Valentina Vasco \href{mailto:valentina.vasco@iit.it}{\texttt{ valentina.\+vasco@iit.\+it}} ~\newline
+ 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Released under the terms of the B\+SD 3-\/Clause License. 
+\end{DoxyCopyright}
+\hypertarget{group__skeletonViewer_intro_sec}{}\subsection{Description}\label{group__skeletonViewer_intro_sec}
+This module is responsible for analyzing the performed movement in real-\/time. It computes the range of motion (R\+OM) for range of motion movements and the speed of the end-\/point for reaching movements, which can be visualized on a yarpscope. Each movement is identified by a group (R\+OM for range of motion and EP for end-\/point) and a tag, and described through a reference joint, a reference direction and a plane. The R\+OM is computed as angle between the vector formed by the reference joint and its child (projected onto the projection plane) and the reference direction. These information are avaliable in the config file motion-\/repertoire.\+ini, which contains relevant information for \mbox{\hyperlink{group__skeletonScaler}{skeleton\+Scaler}}, \mbox{\hyperlink{group__actionRecognizer}{action\+Recognizer}} and \textbackslash{}feedback\+Producer. The tag of the movment has to match the name of the file loaded by \mbox{\hyperlink{group__skeletonPlayer}{skeleton\+Player}} and the label of the classed predicted by \mbox{\hyperlink{group__actionRecognizer}{action\+Recognizer}}. The module is also responsible for generating matio files in order to produce an offline report. It makes use of matio and hdf5 libraries.\hypertarget{group__skeletonViewer_parameters_sec}{}\subsection{Parameters}\label{group__skeletonViewer_parameters_sec}
+
+\begin{DoxyItemize}
+\item --name\+: The module\textquotesingle{}s name; all the open ports will be tagged with the prefix /name
+\item --from\+: Configuration file name with the list of movements that can be analyzed.
+\item --G\+E\+N\+E\+R\+A\+L\+::metric\+\_\+tag\+: List of the groups specifying the movements (range of motion and end-\/point).
+\item --G\+E\+N\+E\+R\+A\+L\+::number\+\_\+metrics\+: List containing how many movements are available for the corresponding group (corresponding to metric\+\_\+tag).
+\item --G\+E\+N\+E\+R\+A\+L\+::cameraposinit\+: Position of the camera in world coordinates sent to \mbox{\hyperlink{group__skeletonViewer}{skeleton\+Viewer}}.
+\item --G\+E\+N\+E\+R\+A\+L\+::focalpointinit\+: Focal point of the camera in world coordinates sent to \mbox{\hyperlink{group__skeletonViewer}{skeleton\+Viewer}}.
+\item --R\+O\+M\+\_\+0\+::motion\+\_\+type\+: Tag of the movement.
+\item --R\+O\+M\+\_\+0\+::tag\+\_\+joint\+: Tag of the reference joint.
+\item --R\+O\+M\+\_\+0\+::ref\+\_\+dir\+: Reference direction for computing the R\+OM in skeleton coordinates.
+\item --R\+O\+M\+\_\+0\+::tag\+\_\+plane\+: Tag of the plane for projecting the vector for computing the R\+OM.
+\item --R\+O\+M\+\_\+0\+::min\+: Minimum value acceptable for the movement (degrees).
+\item --R\+O\+M\+\_\+0\+::max\+: Maximum value acceptable for the movement (degrees).
+\item --R\+O\+M\+\_\+0\+::duration\+: Number of frames used in the action recognition for this movement. Sent to \mbox{\hyperlink{group__actionRecognizer}{action\+Recognizer}}.
+\item --R\+O\+M\+\_\+0\+::twarp\+: Warping factor for squeezing (dilating) in time the template skeleton if less than 1 (greater than 1). Sent to \mbox{\hyperlink{group__skeletonScaler}{skeleton\+Scaler}}.
+\item --R\+O\+M\+\_\+0\+::joint\+\_\+list\+: List of joints under analysis for producing final feedback, provided to \textbackslash{}feedback\+Producer.
+\item --R\+O\+M\+\_\+0\+::sx\+\_\+thresh\+: List of thresholds (corresponding to joint\+\_\+list) on the standard deviation of the error in position along x direction. Sent to \textbackslash{}feedback\+Producer.
+\item --R\+O\+M\+\_\+0\+::sy\+\_\+thresh\+: List of thresholds (corresponding to joint\+\_\+list) on the standard deviation of the error in position along y direction. Sent to \textbackslash{}feedback\+Producer.
+\item --R\+O\+M\+\_\+0\+::sz\+\_\+thresh\+: List of thresholds (corresponding to joint\+\_\+list) on the standard deviation of the error in position along z direction. Sent to to \textbackslash{}feedback\+Producer.
+\item --R\+O\+M\+\_\+0\+::range\+\_\+freq\+: List of thresholds (corresponding to joint\+\_\+list) on the difference in frequency between template and observed joints. Sent to to \textbackslash{}feedback\+Producer.
+\item --R\+O\+M\+\_\+0\+::psd\+\_\+thresh\+: List of thresholds (corresponding to joint\+\_\+list) on the power spectrum density of the observed joints. Sent to to \textbackslash{}feedback\+Producer.
+\item --E\+P\+\_\+0\+::target\+: Target to reach in skeleton coordinates.
+\item --E\+P\+\_\+0\+::radius\+: Radius of the sphere defined around the template target.
+\item --E\+P\+\_\+0\+::zscore\+\_\+thresh\+: Threshold on the statistics of the distribution of the observed points. Points whose score is below this threshold are considered inliers.
+\item --E\+P\+\_\+0\+::inliers\+\_\+thresh\+: Threshold on the number of inliers which fall within the template distribution. 
+\end{DoxyItemize}\hypertarget{group__skeletonViewer_inputports_sec}{}\subsection{Input Ports}\label{group__skeletonViewer_inputports_sec}
+\hypertarget{group__skeletonViewer_outputports_sec}{}\subsection{Output Ports}\label{group__skeletonViewer_outputports_sec}
+
+\begin{DoxyItemize}
+\item /motion\+Analyzer/opc \mbox{[}rpc\mbox{]} \mbox{[}default carrier\+:\mbox{]}\+: Sends commands to objects\+Properties\+Collector to retrieve 3D skeletons.
+\item /motion\+Analyzer/scaler\+:cmd \mbox{[}rpc\mbox{]} \mbox{[}default carrier\+:\mbox{]}\+: Sends commands to \mbox{\hyperlink{group__skeletonScaler}{skeleton\+Scaler}} to load and move the template skeleton.
+\item /motion\+Analyzer/dtw\+:cmd \mbox{[}rpc\mbox{]} \mbox{[}default carrier\+:\mbox{]}\+: Sends commands to \mbox{\hyperlink{group__feedbackProducer}{feedback\+Producer}} to start the analysis for producing feeback.
+\item /motion\+Analyzer/action\+:cmd \mbox{[}rpc\mbox{]} \mbox{[}default carrier\+:\mbox{]}\+: Sends commands to \mbox{\hyperlink{group__actionRecognizer}{action\+Recognizer}} to start the action recognition.
+\item /motion\+Analyzer/scope \mbox{[}Bottle\mbox{]} \mbox{[}default carrier\+:\mbox{]}\+: Outputs a yarp bottle containing the result of the computation along with the ideal value.
+\end{DoxyItemize}\hypertarget{group__skeletonViewer_services_sec}{}\subsection{Services}\label{group__skeletonViewer_services_sec}
+
+\begin{DoxyItemize}
+\item /motion\+Analyzer/cmd \mbox{[}rpc-\/server\mbox{]}\+: service port . This service is described in \mbox{\hyperlink{classmotionAnalyzer__IDL}{motion\+Analyzer\+\_\+\+I\+DL}} (idl.\+thrift) 
+\end{DoxyItemize}

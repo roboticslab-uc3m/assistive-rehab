@@ -1,0 +1,36 @@
+\section{skeleton\+Viewer}
+\label{group__skeletonViewer}\index{skeletonViewer@{skeletonViewer}}
+
+
+This module is responsible for displaying in real-\/time multiple skeletons in 3D.  
+
+
+This module is responsible for displaying in real-\/time multiple skeletons in 3D. 
+
+Version\+:0.\+2.\+0 \begin{DoxyAuthor}{Author}
+Ugo Pattacini \href{mailto:ugo.pattacini@iit.it}{\texttt{ ugo.\+pattacini@iit.\+it}} ~\newline
+ 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Released under the terms of the B\+SD 3-\/Clause License. 
+\end{DoxyCopyright}
+\hypertarget{group__skeletonViewer_intro_sec}{}\subsection{Description}\label{group__skeletonViewer_intro_sec}
+This module is responsible for displaying in real-\/time multiple skeletons in 3D. It makes use of V\+TK.\hypertarget{group__skeletonViewer_parameters_sec}{}\subsection{Parameters}\label{group__skeletonViewer_parameters_sec}
+
+\begin{DoxyItemize}
+\item --x\+: Viewer\textquotesingle{}s x position in screen coordinates pixels.
+\item --y\+: Viewer\textquotesingle{}s y position in screen coordinates pixels.
+\item --w\+: Viewer\textquotesingle{}s width in screen coordinates pixels.
+\item --h\+: Viewer\textquotesingle{}s height in screen coordinates pixels.
+\item --gc-\/period\+: Periodicity of the module (s)
+\item --bg-\/color\+: Viewer\textquotesingle{}s background color using rgb color specification. 
+\end{DoxyItemize}\hypertarget{group__skeletonViewer_inputports_sec}{}\subsection{Input Ports}\label{group__skeletonViewer_inputports_sec}
+
+\begin{DoxyItemize}
+\item /skeleton\+Viewer\+:i \mbox{[}Bottle\mbox{]} \mbox{[}default carrier\+:\mbox{]}\+: Receives 3D skeletons to visualize.
+\item /skeleton\+Viewer\+:rpc \mbox{[}rpc\mbox{]} \mbox{[}default carrier\+:\mbox{]}\+: Receives the following commands and provides replies\+: (notation\+: \char`\"{}.\char`\"{} identifies a string)
+\begin{DoxyEnumerate}
+\item {\bfseries{set camera options}} {\itshape \char`\"{}set\+\_\+camera\char`\"{} (\char`\"{}position\char`\"{} pos\+\_\+list) (\char`\"{}focalpoint\char`\"{} focal\+\_\+list) (\char`\"{}viewup\char`\"{} view\+\_\+list)}\+:set camera options for visualization. pos\+\_\+list the position of the camera in world coordinates (set to (0.\+0,0.\+0,1.\+0) if not provided). focal\+\_\+list the focal point of the camera in world coordinates (set to (0.\+0,0.\+0,0.\+0) if not provided). view\+\_\+list view up direction for the camera (set to (0.\+0,1.\+0,0.\+0) if not provided).
+\end{DoxyEnumerate}
+\end{DoxyItemize}\hypertarget{group__skeletonViewer_outputports_sec}{}\subsection{Output Ports}\label{group__skeletonViewer_outputports_sec}
+\hypertarget{group__skeletonViewer_services_sec}{}\subsection{Services}\label{group__skeletonViewer_services_sec}

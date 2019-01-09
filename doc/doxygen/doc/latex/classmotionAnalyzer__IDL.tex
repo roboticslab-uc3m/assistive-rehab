@@ -1,0 +1,173 @@
+\section{motion\+Analyzer\+\_\+\+I\+DL Class Reference}
+\label{classmotionAnalyzer__IDL}\index{motionAnalyzer\_IDL@{motionAnalyzer\_IDL}}
+
+
+\mbox{\hyperlink{classmotionAnalyzer__IDL}{motion\+Analyzer\+\_\+\+I\+DL}} I\+DL Interface to Motion Analyzer services.  
+
+
+
+
+{\ttfamily \#include $<$motion\+Analyzer\+\_\+\+I\+D\+L.\+h$>$}
+
+
+
+Inherits Wire.
+
+
+
+Inherited by Manager.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classmotionAnalyzer__IDL_af06e1e8fd5ca8bee17ee69e5e61564af}{load\+Motion\+List}} ()
+\begin{DoxyCompactList}\small\item\em Load motion repertoire from file. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classmotionAnalyzer__IDL_a592816f8515dddcd08fe7e7e87774b16}{load\+Metric}} (const std\+::string \&metric\+\_\+tag)
+\begin{DoxyCompactList}\small\item\em Load metric to analyze. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classmotionAnalyzer__IDL_ae7b5e18ee6dae046bab1ed59fb9742e4}{get\+Motion\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Get the type of motion. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classmotionAnalyzer__IDL_a139730029d1e7112eb66636c21fe99c8}{list\+Metrics}} ()
+\begin{DoxyCompactList}\small\item\em List available metrics. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classmotionAnalyzer__IDL_af1a381d5b99e8a14d20b74a6444743f8}{start}} ()
+\begin{DoxyCompactList}\small\item\em Start processing. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classmotionAnalyzer__IDL_affddad47070a4fdb10357c10037f39f5}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stop processing. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classmotionAnalyzer__IDL_a158f8a856611aa5d4bcab9adc9c67a5d}{select\+Skel}} (const std\+::string \&skel\+\_\+tag)
+\begin{DoxyCompactList}\small\item\em Select skeleton by its tag. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classmotionAnalyzer__IDL_aaec274413bf24d3e213ce6cfb2592748}{list\+Joints}} ()
+\begin{DoxyCompactList}\small\item\em List joints on which feedback is computed. \end{DoxyCompactList}\item 
+\mbox{\label{classmotionAnalyzer__IDL_a155c67538af54a6f3ec82381b921a159}} 
+bool {\bfseries read} (yarp\+::os\+::\+Connection\+Reader \&connection) override
+\item 
+\mbox{\label{classmotionAnalyzer__IDL_a11954460905060e7f9d7ec2a287cee72}} 
+virtual std\+::vector$<$ std\+::string $>$ {\bfseries help} (const std\+::string \&function\+Name=\char`\"{}-\/-\/all\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classmotionAnalyzer__IDL}{motion\+Analyzer\+\_\+\+I\+DL}} I\+DL Interface to Motion Analyzer services. 
+
+Definition at line 25 of file motion\+Analyzer\+\_\+\+I\+D\+L.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classmotionAnalyzer__IDL_ae7b5e18ee6dae046bab1ed59fb9742e4}} 
+\index{motionAnalyzer\_IDL@{motionAnalyzer\_IDL}!getMotionType@{getMotionType}}
+\index{getMotionType@{getMotionType}!motionAnalyzer\_IDL@{motionAnalyzer\_IDL}}
+\subsubsection{\texorpdfstring{getMotionType()}{getMotionType()}}
+{\footnotesize\ttfamily virtual std\+::string motion\+Analyzer\+\_\+\+I\+D\+L\+::get\+Motion\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the type of motion. 
+
+\begin{DoxyReturn}{Returns}
+string containing the type of motion / empty string on failure. 
+\end{DoxyReturn}
+\mbox{\label{classmotionAnalyzer__IDL_aaec274413bf24d3e213ce6cfb2592748}} 
+\index{motionAnalyzer\_IDL@{motionAnalyzer\_IDL}!listJoints@{listJoints}}
+\index{listJoints@{listJoints}!motionAnalyzer\_IDL@{motionAnalyzer\_IDL}}
+\subsubsection{\texorpdfstring{listJoints()}{listJoints()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$std\+::string$>$ motion\+Analyzer\+\_\+\+I\+D\+L\+::list\+Joints (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+List joints on which feedback is computed. 
+
+\begin{DoxyReturn}{Returns}
+the list of joints on which feedback is computed. 
+\end{DoxyReturn}
+\mbox{\label{classmotionAnalyzer__IDL_a139730029d1e7112eb66636c21fe99c8}} 
+\index{motionAnalyzer\_IDL@{motionAnalyzer\_IDL}!listMetrics@{listMetrics}}
+\index{listMetrics@{listMetrics}!motionAnalyzer\_IDL@{motionAnalyzer\_IDL}}
+\subsubsection{\texorpdfstring{listMetrics()}{listMetrics()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$std\+::string$>$ motion\+Analyzer\+\_\+\+I\+D\+L\+::list\+Metrics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+List available metrics. 
+
+\begin{DoxyReturn}{Returns}
+the list of the available metrics as defined in the motion-\/repertoire. 
+\end{DoxyReturn}
+\mbox{\label{classmotionAnalyzer__IDL_a592816f8515dddcd08fe7e7e87774b16}} 
+\index{motionAnalyzer\_IDL@{motionAnalyzer\_IDL}!loadMetric@{loadMetric}}
+\index{loadMetric@{loadMetric}!motionAnalyzer\_IDL@{motionAnalyzer\_IDL}}
+\subsubsection{\texorpdfstring{loadMetric()}{loadMetric()}}
+{\footnotesize\ttfamily virtual bool motion\+Analyzer\+\_\+\+I\+D\+L\+::load\+Metric (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{metric\+\_\+tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Load metric to analyze. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em metric\+\_\+tag} & name of the metric to analyze \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true/false on failure. 
+\end{DoxyReturn}
+\mbox{\label{classmotionAnalyzer__IDL_af06e1e8fd5ca8bee17ee69e5e61564af}} 
+\index{motionAnalyzer\_IDL@{motionAnalyzer\_IDL}!loadMotionList@{loadMotionList}}
+\index{loadMotionList@{loadMotionList}!motionAnalyzer\_IDL@{motionAnalyzer\_IDL}}
+\subsubsection{\texorpdfstring{loadMotionList()}{loadMotionList()}}
+{\footnotesize\ttfamily virtual bool motion\+Analyzer\+\_\+\+I\+D\+L\+::load\+Motion\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Load motion repertoire from file. 
+
+\begin{DoxyReturn}{Returns}
+true/false on success/failure. 
+\end{DoxyReturn}
+\mbox{\label{classmotionAnalyzer__IDL_a158f8a856611aa5d4bcab9adc9c67a5d}} 
+\index{motionAnalyzer\_IDL@{motionAnalyzer\_IDL}!selectSkel@{selectSkel}}
+\index{selectSkel@{selectSkel}!motionAnalyzer\_IDL@{motionAnalyzer\_IDL}}
+\subsubsection{\texorpdfstring{selectSkel()}{selectSkel()}}
+{\footnotesize\ttfamily virtual bool motion\+Analyzer\+\_\+\+I\+D\+L\+::select\+Skel (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{skel\+\_\+tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Select skeleton by its tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em skel\+\_\+tag} & tag of the skeleton to process \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true/false on success/failure. 
+\end{DoxyReturn}
+\mbox{\label{classmotionAnalyzer__IDL_af1a381d5b99e8a14d20b74a6444743f8}} 
+\index{motionAnalyzer\_IDL@{motionAnalyzer\_IDL}!start@{start}}
+\index{start@{start}!motionAnalyzer\_IDL@{motionAnalyzer\_IDL}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily virtual bool motion\+Analyzer\+\_\+\+I\+D\+L\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Start processing. 
+
+\begin{DoxyReturn}{Returns}
+true/false on success/failure. 
+\end{DoxyReturn}
+\mbox{\label{classmotionAnalyzer__IDL_affddad47070a4fdb10357c10037f39f5}} 
+\index{motionAnalyzer\_IDL@{motionAnalyzer\_IDL}!stop@{stop}}
+\index{stop@{stop}!motionAnalyzer\_IDL@{motionAnalyzer\_IDL}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily virtual bool motion\+Analyzer\+\_\+\+I\+D\+L\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Stop processing. 
+
+\begin{DoxyReturn}{Returns}
+true/false on success/failure. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+idl\+\_\+dox/motion\+Analyzer\+\_\+\+I\+D\+L.\+h\end{DoxyCompactItemize}

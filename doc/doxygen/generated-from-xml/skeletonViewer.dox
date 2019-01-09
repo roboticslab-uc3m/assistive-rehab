@@ -1,0 +1,47 @@
+
+  /**
+  *
+  * @ingroup skeletonViewer 
+  * \defgroup skeletonViewer skeletonViewer
+  * This module is responsible for displaying in real-time multiple skeletons in 3D.
+  * Version:0.2.0
+  * \author  Ugo Pattacini ugo.pattacini@iit.it
+  * \n
+  * \copyright  Released under the terms of the BSD 3-Clause License.
+  * \section intro_sec Description
+  *
+  
+   This module is responsible for displaying in real-time multiple skeletons in 3D.
+   It makes use of VTK.
+  
+  * \section parameters_sec Parameters     
+  
+  *- --x: Viewer's x position in screen coordinates pixels.
+  *- --y: Viewer's y position in screen coordinates pixels.
+  *- --w: Viewer's width in screen coordinates pixels.
+  *- --h: Viewer's height in screen coordinates pixels.
+  *- --gc-period: Periodicity of the module (s)
+  *- --bg-color: Viewer's background color using rgb color specification.
+  * \section inputports_sec Input Ports
+  * 
+  *- /skeletonViewer:i [Bottle]  [default carrier:]: 
+            Receives 3D skeletons to visualize.
+          
+  *
+  
+  *- /skeletonViewer:rpc [rpc]  [default carrier:]: Receives the following commands and provides replies: (notation: "." identifies a string)
+           -# <b>set camera options</b> <i>"set_camera" ("position" pos_list) ("focalpoint" focal_list) ("viewup" view_list)</i>:set camera options for visualization. pos_list the position of the camera in world coordinates (set to (0.0,0.0,1.0) if not provided). focal_list the focal point of the camera in world coordinates (set to (0.0,0.0,0.0) if not provided). view_list view up direction for the camera (set to (0.0,1.0,0.0) if not provided).
+           
+  *
+  
+  * \section outputports_sec Output Ports
+  * 
+  *
+  * \section services_sec Services
+  * 
+  *
+  * 
+  *
+  *
+  **/
+
