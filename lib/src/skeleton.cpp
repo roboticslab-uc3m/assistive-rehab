@@ -715,6 +715,54 @@ SkeletonStd::SkeletonStd()
     tag2key[KeyPointTag::hip_right]=new KeyPoint(KeyPointTag::hip_right);
     tag2key[KeyPointTag::knee_right]=new KeyPoint(KeyPointTag::knee_right);
     tag2key[KeyPointTag::ankle_right]=new KeyPoint(KeyPointTag::ankle_right);
+    tag2key[KeyPointTag::eye_left]=new KeyPoint(KeyPointTag::eye_left);
+    tag2key[KeyPointTag::ear_left]=new KeyPoint(KeyPointTag::ear_left);
+    tag2key[KeyPointTag::eye_right]=new KeyPoint(KeyPointTag::eye_right);
+    tag2key[KeyPointTag::ear_right]=new KeyPoint(KeyPointTag::ear_right);
+
+    tag2key[KeyPointTag::wrist_left]=new KeyPoint(KeyPointTag::wrist_left);
+    tag2key[KeyPointTag::abductor_left]=new KeyPoint(KeyPointTag::abductor_left);
+    tag2key[KeyPointTag::thumb_base_left]=new KeyPoint(KeyPointTag::thumb_base_left);
+    tag2key[KeyPointTag::thumb_proximal_left]=new KeyPoint(KeyPointTag::thumb_proximal_left);
+    tag2key[KeyPointTag::thumb_distal_left]=new KeyPoint(KeyPointTag::thumb_distal_left);
+    tag2key[KeyPointTag::index_base_left]=new KeyPoint(KeyPointTag::index_base_left);
+    tag2key[KeyPointTag::index_proximal_left]=new KeyPoint(KeyPointTag::index_proximal_left);
+    tag2key[KeyPointTag::index_intermediate_left]=new KeyPoint(KeyPointTag::index_intermediate_left);
+    tag2key[KeyPointTag::index_distal_left]=new KeyPoint(KeyPointTag::index_distal_left);
+    tag2key[KeyPointTag::middle_base_left]=new KeyPoint(KeyPointTag::middle_base_left);
+    tag2key[KeyPointTag::middle_proximal_left]=new KeyPoint(KeyPointTag::middle_proximal_left);
+    tag2key[KeyPointTag::middle_intermediate_left]=new KeyPoint(KeyPointTag::middle_intermediate_left);
+    tag2key[KeyPointTag::middle_distal_left]=new KeyPoint(KeyPointTag::middle_distal_left);
+    tag2key[KeyPointTag::ring_base_left]=new KeyPoint(KeyPointTag::ring_base_left);
+    tag2key[KeyPointTag::ring_proximal_left]=new KeyPoint(KeyPointTag::ring_proximal_left);
+    tag2key[KeyPointTag::ring_intermediate_left]=new KeyPoint(KeyPointTag::ring_intermediate_left);
+    tag2key[KeyPointTag::ring_distal_left]=new KeyPoint(KeyPointTag::ring_distal_left);
+    tag2key[KeyPointTag::pinky_base_left]=new KeyPoint(KeyPointTag::pinky_base_left);
+    tag2key[KeyPointTag::pinky_proximal_left]=new KeyPoint(KeyPointTag::pinky_proximal_left);
+    tag2key[KeyPointTag::pinky_intermediate_left]=new KeyPoint(KeyPointTag::pinky_intermediate_left);
+    tag2key[KeyPointTag::pinky_distal_left]=new KeyPoint(KeyPointTag::pinky_distal_left);
+
+    tag2key[KeyPointTag::wrist_right]=new KeyPoint(KeyPointTag::wrist_right);
+    tag2key[KeyPointTag::abductor_right]=new KeyPoint(KeyPointTag::abductor_right);
+    tag2key[KeyPointTag::thumb_base_right]=new KeyPoint(KeyPointTag::thumb_base_right);
+    tag2key[KeyPointTag::thumb_proximal_right]=new KeyPoint(KeyPointTag::thumb_proximal_right);
+    tag2key[KeyPointTag::thumb_distal_right]=new KeyPoint(KeyPointTag::thumb_distal_right);
+    tag2key[KeyPointTag::index_base_right]=new KeyPoint(KeyPointTag::index_base_right);
+    tag2key[KeyPointTag::index_proximal_right]=new KeyPoint(KeyPointTag::index_proximal_right);
+    tag2key[KeyPointTag::index_intermediate_right]=new KeyPoint(KeyPointTag::index_intermediate_right);
+    tag2key[KeyPointTag::index_distal_right]=new KeyPoint(KeyPointTag::index_distal_right);
+    tag2key[KeyPointTag::middle_base_right]=new KeyPoint(KeyPointTag::middle_base_right);
+    tag2key[KeyPointTag::middle_proximal_right]=new KeyPoint(KeyPointTag::middle_proximal_right);
+    tag2key[KeyPointTag::middle_intermediate_right]=new KeyPoint(KeyPointTag::middle_intermediate_right);
+    tag2key[KeyPointTag::middle_distal_right]=new KeyPoint(KeyPointTag::middle_distal_right);
+    tag2key[KeyPointTag::ring_base_right]=new KeyPoint(KeyPointTag::ring_base_right);
+    tag2key[KeyPointTag::ring_proximal_right]=new KeyPoint(KeyPointTag::ring_proximal_right);
+    tag2key[KeyPointTag::ring_intermediate_right]=new KeyPoint(KeyPointTag::ring_intermediate_right);
+    tag2key[KeyPointTag::ring_distal_right]=new KeyPoint(KeyPointTag::ring_distal_right);
+    tag2key[KeyPointTag::pinky_base_right]=new KeyPoint(KeyPointTag::pinky_base_right);
+    tag2key[KeyPointTag::pinky_proximal_right]=new KeyPoint(KeyPointTag::pinky_proximal_right);
+    tag2key[KeyPointTag::pinky_intermediate_right]=new KeyPoint(KeyPointTag::pinky_intermediate_right);
+    tag2key[KeyPointTag::pinky_distal_right]=new KeyPoint(KeyPointTag::pinky_distal_right);
 
     keypoints.push_back(tag2key[KeyPointTag::shoulder_center]);
     keypoints.push_back(tag2key[KeyPointTag::head]);
@@ -730,6 +778,54 @@ SkeletonStd::SkeletonStd()
     keypoints.push_back(tag2key[KeyPointTag::hip_right]);
     keypoints.push_back(tag2key[KeyPointTag::knee_right]);
     keypoints.push_back(tag2key[KeyPointTag::ankle_right]);
+    keypoints.push_back(tag2key[KeyPointTag::eye_left]);
+    keypoints.push_back(tag2key[KeyPointTag::ear_left]);
+    keypoints.push_back(tag2key[KeyPointTag::eye_right]);
+    keypoints.push_back(tag2key[KeyPointTag::ear_right]);
+
+    keypoints.push_back(tag2key[KeyPointTag::wrist_left]);
+    keypoints.push_back(tag2key[KeyPointTag::abductor_left]);
+    keypoints.push_back(tag2key[KeyPointTag::thumb_base_left]);
+    keypoints.push_back(tag2key[KeyPointTag::thumb_proximal_left]);
+    keypoints.push_back(tag2key[KeyPointTag::thumb_distal_left]);
+    keypoints.push_back(tag2key[KeyPointTag::index_base_left]);
+    keypoints.push_back(tag2key[KeyPointTag::index_proximal_left]);
+    keypoints.push_back(tag2key[KeyPointTag::index_intermediate_left]);
+    keypoints.push_back(tag2key[KeyPointTag::index_distal_left]);
+    keypoints.push_back(tag2key[KeyPointTag::middle_base_left]);
+    keypoints.push_back(tag2key[KeyPointTag::middle_proximal_left]);
+    keypoints.push_back(tag2key[KeyPointTag::middle_intermediate_left]);
+    keypoints.push_back(tag2key[KeyPointTag::middle_distal_left]);
+    keypoints.push_back(tag2key[KeyPointTag::ring_base_left]);
+    keypoints.push_back(tag2key[KeyPointTag::ring_proximal_left]);
+    keypoints.push_back(tag2key[KeyPointTag::ring_intermediate_left]);
+    keypoints.push_back(tag2key[KeyPointTag::ring_distal_left]);
+    keypoints.push_back(tag2key[KeyPointTag::pinky_base_left]);
+    keypoints.push_back(tag2key[KeyPointTag::pinky_proximal_left]);
+    keypoints.push_back(tag2key[KeyPointTag::pinky_intermediate_left]);
+    keypoints.push_back(tag2key[KeyPointTag::pinky_distal_left]);
+
+    keypoints.push_back(tag2key[KeyPointTag::wrist_right]);
+    keypoints.push_back(tag2key[KeyPointTag::abductor_right]);
+    keypoints.push_back(tag2key[KeyPointTag::thumb_base_right]);
+    keypoints.push_back(tag2key[KeyPointTag::thumb_proximal_right]);
+    keypoints.push_back(tag2key[KeyPointTag::thumb_distal_right]);
+    keypoints.push_back(tag2key[KeyPointTag::index_base_right]);
+    keypoints.push_back(tag2key[KeyPointTag::index_proximal_right]);
+    keypoints.push_back(tag2key[KeyPointTag::index_intermediate_right]);
+    keypoints.push_back(tag2key[KeyPointTag::index_distal_right]);
+    keypoints.push_back(tag2key[KeyPointTag::middle_base_right]);
+    keypoints.push_back(tag2key[KeyPointTag::middle_proximal_right]);
+    keypoints.push_back(tag2key[KeyPointTag::middle_intermediate_right]);
+    keypoints.push_back(tag2key[KeyPointTag::middle_distal_right]);
+    keypoints.push_back(tag2key[KeyPointTag::ring_base_right]);
+    keypoints.push_back(tag2key[KeyPointTag::ring_proximal_right]);
+    keypoints.push_back(tag2key[KeyPointTag::ring_intermediate_right]);
+    keypoints.push_back(tag2key[KeyPointTag::ring_distal_right]);
+    keypoints.push_back(tag2key[KeyPointTag::pinky_base_right]);
+    keypoints.push_back(tag2key[KeyPointTag::pinky_proximal_right]);
+    keypoints.push_back(tag2key[KeyPointTag::pinky_intermediate_right]);
+    keypoints.push_back(tag2key[KeyPointTag::pinky_distal_right]);
 
     unsigned int id=0;
     for (auto &k:keypoints)
@@ -755,6 +851,90 @@ SkeletonStd::SkeletonStd()
 
     // handLeft
     tag2key[KeyPointTag::hand_left]->parent.push_back(tag2key[KeyPointTag::elbow_left]);
+    tag2key[KeyPointTag::hand_left]->child.push_back(tag2key[KeyPointTag::wrist_left]);
+
+    // wristLeft
+    tag2key[KeyPointTag::wrist_left]->parent.push_back(tag2key[KeyPointTag::hand_left]);
+    tag2key[KeyPointTag::wrist_left]->child.push_back(tag2key[KeyPointTag::abductor_left]);
+    tag2key[KeyPointTag::wrist_left]->child.push_back(tag2key[KeyPointTag::index_base_left]);
+    tag2key[KeyPointTag::wrist_left]->child.push_back(tag2key[KeyPointTag::middle_base_left]);
+    tag2key[KeyPointTag::wrist_left]->child.push_back(tag2key[KeyPointTag::ring_base_left]);
+    tag2key[KeyPointTag::wrist_left]->child.push_back(tag2key[KeyPointTag::pinky_base_left]);
+
+    // abductorLeft
+    tag2key[KeyPointTag::abductor_left]->parent.push_back(tag2key[KeyPointTag::wrist_left]);
+    tag2key[KeyPointTag::abductor_left]->child.push_back(tag2key[KeyPointTag::thumb_base_left]);
+
+    // thumbBaseLeft
+    tag2key[KeyPointTag::thumb_base_left]->parent.push_back(tag2key[KeyPointTag::abductor_left]);
+    tag2key[KeyPointTag::thumb_base_left]->child.push_back(tag2key[KeyPointTag::thumb_proximal_left]);
+
+    // thumbProximalLeft
+    tag2key[KeyPointTag::thumb_proximal_left]->parent.push_back(tag2key[KeyPointTag::thumb_base_left]);
+    tag2key[KeyPointTag::thumb_proximal_left]->child.push_back(tag2key[KeyPointTag::thumb_distal_left]);
+
+    // thumbDistalLeft
+    tag2key[KeyPointTag::thumb_distal_left]->parent.push_back(tag2key[KeyPointTag::thumb_proximal_left]);
+
+    // indexBaseLeft
+    tag2key[KeyPointTag::index_base_left]->parent.push_back(tag2key[KeyPointTag::wrist_left]);
+    tag2key[KeyPointTag::index_base_left]->child.push_back(tag2key[KeyPointTag::index_proximal_left]);
+
+    // indexProximalLeft
+    tag2key[KeyPointTag::index_proximal_left]->parent.push_back(tag2key[KeyPointTag::index_base_left]);
+    tag2key[KeyPointTag::index_proximal_left]->child.push_back(tag2key[KeyPointTag::index_intermediate_left]);
+
+    // indexIntermediateLeft
+    tag2key[KeyPointTag::index_intermediate_left]->parent.push_back(tag2key[KeyPointTag::index_proximal_left]);
+    tag2key[KeyPointTag::index_intermediate_left]->child.push_back(tag2key[KeyPointTag::index_distal_left]);
+
+    // indexDistalLeft
+    tag2key[KeyPointTag::index_distal_left]->parent.push_back(tag2key[KeyPointTag::index_intermediate_left]);
+
+    // middleBaseLeft
+    tag2key[KeyPointTag::middle_base_left]->parent.push_back(tag2key[KeyPointTag::wrist_left]);
+    tag2key[KeyPointTag::middle_base_left]->child.push_back(tag2key[KeyPointTag::middle_proximal_left]);
+
+    // middleProximalLeft
+    tag2key[KeyPointTag::middle_proximal_left]->parent.push_back(tag2key[KeyPointTag::middle_base_left]);
+    tag2key[KeyPointTag::middle_proximal_left]->child.push_back(tag2key[KeyPointTag::middle_intermediate_left]);
+
+    // middleIntermediateLeft
+    tag2key[KeyPointTag::middle_intermediate_left]->parent.push_back(tag2key[KeyPointTag::middle_proximal_left]);
+    tag2key[KeyPointTag::middle_intermediate_left]->child.push_back(tag2key[KeyPointTag::middle_distal_left]);
+
+    // middleDistalLeft
+    tag2key[KeyPointTag::middle_distal_left]->parent.push_back(tag2key[KeyPointTag::middle_intermediate_left]);
+
+    // ringBaseLeft
+    tag2key[KeyPointTag::ring_base_left]->parent.push_back(tag2key[KeyPointTag::wrist_left]);
+    tag2key[KeyPointTag::ring_base_left]->child.push_back(tag2key[KeyPointTag::ring_proximal_left]);
+
+    // ringProximalLeft
+    tag2key[KeyPointTag::ring_proximal_left]->parent.push_back(tag2key[KeyPointTag::ring_base_left]);
+    tag2key[KeyPointTag::ring_proximal_left]->child.push_back(tag2key[KeyPointTag::ring_intermediate_left]);
+
+    // ringIntermediateLeft
+    tag2key[KeyPointTag::ring_intermediate_left]->parent.push_back(tag2key[KeyPointTag::ring_proximal_left]);
+    tag2key[KeyPointTag::ring_intermediate_left]->child.push_back(tag2key[KeyPointTag::ring_distal_left]);
+
+    // ringDistalLeft
+    tag2key[KeyPointTag::ring_distal_left]->parent.push_back(tag2key[KeyPointTag::ring_intermediate_left]);
+
+    // pinkyBaseLeft
+    tag2key[KeyPointTag::pinky_base_left]->parent.push_back(tag2key[KeyPointTag::wrist_left]);
+    tag2key[KeyPointTag::pinky_base_left]->child.push_back(tag2key[KeyPointTag::pinky_proximal_left]);
+
+    // pinkyProximalLeft
+    tag2key[KeyPointTag::pinky_proximal_left]->parent.push_back(tag2key[KeyPointTag::pinky_base_left]);
+    tag2key[KeyPointTag::pinky_proximal_left]->child.push_back(tag2key[KeyPointTag::pinky_intermediate_left]);
+
+    // pinkyIntermediateLeft
+    tag2key[KeyPointTag::pinky_intermediate_left]->parent.push_back(tag2key[KeyPointTag::pinky_proximal_left]);
+    tag2key[KeyPointTag::pinky_intermediate_left]->child.push_back(tag2key[KeyPointTag::pinky_distal_left]);
+
+    // pinkyDistalLeft
+    tag2key[KeyPointTag::pinky_distal_left]->parent.push_back(tag2key[KeyPointTag::pinky_intermediate_left]);
 
     // shoulderRight
     tag2key[KeyPointTag::shoulder_right]->parent.push_back(tag2key[KeyPointTag::shoulder_center]);
@@ -766,6 +946,90 @@ SkeletonStd::SkeletonStd()
 
     // handRight
     tag2key[KeyPointTag::hand_right]->parent.push_back(tag2key[KeyPointTag::elbow_right]);
+    tag2key[KeyPointTag::hand_right]->child.push_back(tag2key[KeyPointTag::wrist_right]);
+
+    // wristRight
+    tag2key[KeyPointTag::wrist_right]->parent.push_back(tag2key[KeyPointTag::hand_right]);
+    tag2key[KeyPointTag::wrist_right]->child.push_back(tag2key[KeyPointTag::abductor_right]);
+    tag2key[KeyPointTag::wrist_right]->child.push_back(tag2key[KeyPointTag::index_base_right]);
+    tag2key[KeyPointTag::wrist_right]->child.push_back(tag2key[KeyPointTag::middle_base_right]);
+    tag2key[KeyPointTag::wrist_right]->child.push_back(tag2key[KeyPointTag::ring_base_right]);
+    tag2key[KeyPointTag::wrist_right]->child.push_back(tag2key[KeyPointTag::pinky_base_right]);
+
+    // abductorRight
+    tag2key[KeyPointTag::abductor_right]->parent.push_back(tag2key[KeyPointTag::wrist_right]);
+    tag2key[KeyPointTag::abductor_right]->child.push_back(tag2key[KeyPointTag::thumb_base_right]);
+
+    // thumbBaseRight
+    tag2key[KeyPointTag::thumb_base_right]->parent.push_back(tag2key[KeyPointTag::abductor_right]);
+    tag2key[KeyPointTag::thumb_base_right]->child.push_back(tag2key[KeyPointTag::thumb_proximal_right]);
+
+    // thumbProximalRight
+    tag2key[KeyPointTag::thumb_proximal_right]->parent.push_back(tag2key[KeyPointTag::thumb_base_right]);
+    tag2key[KeyPointTag::thumb_proximal_right]->child.push_back(tag2key[KeyPointTag::thumb_distal_right]);
+
+    // thumbDistalRight
+    tag2key[KeyPointTag::thumb_distal_right]->parent.push_back(tag2key[KeyPointTag::thumb_proximal_right]);
+
+    // indexBaseRight
+    tag2key[KeyPointTag::index_base_right]->parent.push_back(tag2key[KeyPointTag::wrist_right]);
+    tag2key[KeyPointTag::index_base_right]->child.push_back(tag2key[KeyPointTag::index_proximal_right]);
+
+    // indexProximalRight
+    tag2key[KeyPointTag::index_proximal_right]->parent.push_back(tag2key[KeyPointTag::index_base_right]);
+    tag2key[KeyPointTag::index_proximal_right]->child.push_back(tag2key[KeyPointTag::index_intermediate_right]);
+
+    // indexIntermediateRight
+    tag2key[KeyPointTag::index_intermediate_right]->parent.push_back(tag2key[KeyPointTag::index_proximal_right]);
+    tag2key[KeyPointTag::index_intermediate_right]->child.push_back(tag2key[KeyPointTag::index_distal_right]);
+
+    // indexDistalRight
+    tag2key[KeyPointTag::index_distal_right]->parent.push_back(tag2key[KeyPointTag::index_intermediate_right]);
+
+    // middleBaseRight
+    tag2key[KeyPointTag::middle_base_right]->parent.push_back(tag2key[KeyPointTag::wrist_right]);
+    tag2key[KeyPointTag::middle_base_right]->child.push_back(tag2key[KeyPointTag::middle_proximal_right]);
+
+    // middleProximalRight
+    tag2key[KeyPointTag::middle_proximal_right]->parent.push_back(tag2key[KeyPointTag::middle_base_right]);
+    tag2key[KeyPointTag::middle_proximal_right]->child.push_back(tag2key[KeyPointTag::middle_intermediate_right]);
+
+    // middleIntermediateRight
+    tag2key[KeyPointTag::middle_intermediate_right]->parent.push_back(tag2key[KeyPointTag::middle_proximal_right]);
+    tag2key[KeyPointTag::middle_intermediate_right]->child.push_back(tag2key[KeyPointTag::middle_distal_right]);
+
+    // middleDistalRight
+    tag2key[KeyPointTag::middle_distal_right]->parent.push_back(tag2key[KeyPointTag::middle_intermediate_right]);
+
+    // ringBaseRight
+    tag2key[KeyPointTag::ring_base_right]->parent.push_back(tag2key[KeyPointTag::wrist_right]);
+    tag2key[KeyPointTag::ring_base_right]->child.push_back(tag2key[KeyPointTag::ring_proximal_right]);
+
+    // ringProximalRight
+    tag2key[KeyPointTag::ring_proximal_right]->parent.push_back(tag2key[KeyPointTag::ring_base_right]);
+    tag2key[KeyPointTag::ring_proximal_right]->child.push_back(tag2key[KeyPointTag::ring_intermediate_right]);
+
+    // ringIntermediateRight
+    tag2key[KeyPointTag::ring_intermediate_right]->parent.push_back(tag2key[KeyPointTag::ring_proximal_right]);
+    tag2key[KeyPointTag::ring_intermediate_right]->child.push_back(tag2key[KeyPointTag::ring_distal_right]);
+
+    // ringDistalRight
+    tag2key[KeyPointTag::ring_distal_right]->parent.push_back(tag2key[KeyPointTag::ring_intermediate_right]);
+
+    // pinkyBaseRight
+    tag2key[KeyPointTag::pinky_base_right]->parent.push_back(tag2key[KeyPointTag::wrist_right]);
+    tag2key[KeyPointTag::pinky_base_right]->child.push_back(tag2key[KeyPointTag::pinky_proximal_right]);
+
+    // pinkyProximalRight
+    tag2key[KeyPointTag::pinky_proximal_right]->parent.push_back(tag2key[KeyPointTag::pinky_base_right]);
+    tag2key[KeyPointTag::pinky_proximal_right]->child.push_back(tag2key[KeyPointTag::pinky_intermediate_right]);
+
+    // pinkyIntermediateRight
+    tag2key[KeyPointTag::pinky_intermediate_right]->parent.push_back(tag2key[KeyPointTag::pinky_proximal_right]);
+    tag2key[KeyPointTag::pinky_intermediate_right]->child.push_back(tag2key[KeyPointTag::pinky_distal_right]);
+
+    // pinkyDistalRight
+    tag2key[KeyPointTag::pinky_distal_right]->parent.push_back(tag2key[KeyPointTag::pinky_intermediate_right]);
 
     // hipLeft
     tag2key[KeyPointTag::hip_left]->parent.push_back(tag2key[KeyPointTag::shoulder_center]);
