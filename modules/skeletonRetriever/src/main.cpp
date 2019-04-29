@@ -325,41 +325,48 @@ class Retriever : public RFModule
         Vector p,pixel(2);
         for (size_t i=0; i<keys->size(); i++)
         {
-            if (Bottle *k=keys->get(i).asList())
+            Bottle *type=keys->get(i).asList(); // body, left hand, right hand
+            for (size_t j=0; j<type->size(); j++)
             {
-                if (k->size()==4)
+                if (Bottle *k=type->get(j).asList())
                 {
-                    string tag=k->get(0).asString();
-                    int u=(int)k->get(1).asDouble();
-                    int v=(int)k->get(2).asDouble();
-                    double confidence=k->get(3).asDouble();
-
-                    if ((confidence>=keys_recognition_confidence) && getPoint3D(u,v,p))
+                    if (k->size()==4)
                     {
-                        pixel[0]=u; pixel[1]=v;
-                        unordered.push_back(make_pair(keysRemap[tag],make_pair(p,pixel)));
-                        if ((keysRemap[tag]==KeyPointTag::hip_left) ||
-                            (keysRemap[tag]==KeyPointTag::hip_right))
+                        string tag=k->get(0).asString();
+                        int u=(int)k->get(1).asDouble();
+                        int v=(int)k->get(2).asDouble();
+                        double confidence=k->get(3).asDouble();
+
+                        if ((confidence>=keys_recognition_confidence) && getPoint3D(u,v,p))
                         {
-                            hips.push_back(p);
-                        }
-                        else if (keysRemap[tag]==KeyPointTag::shoulder_center)
-                        {
-                            s->pivot[0]=u;
-                            s->pivot[1]=v;
+                            pixel[0]=u; pixel[1]=v;
+                            string normalized=tag;
+                            if (i==1) normalized="L"+normalized;
+                            else if (i==2) normalized="R"+normalized;
+                            unordered.push_back(make_pair(keysRemap[normalized],make_pair(p,pixel)));
+                            if ((keysRemap[normalized]==KeyPointTag::hip_left) ||
+                                (keysRemap[normalized]==KeyPointTag::hip_right))
+                            {
+                                hips.push_back(p);
+                            }
+                            else if (keysRemap[normalized]==KeyPointTag::shoulder_center)
+                            {
+                                s->pivot[0]=u;
+                                s->pivot[1]=v;
+                            }
                         }
                     }
-                }
-                else if (k->size()==3)
-                {
-                    string tag=k->get(0).asString();
-                    string name=k->get(1).asString();
-                    double confidence=k->get(2).asDouble();
-
-                    if (tag=="Name")
+                    else if (k->size()==3)
                     {
-                        s->skeleton->setTag(name);
-                        s->name_confidence=confidence;
+                        string tag=k->get(0).asString();
+                        string name=k->get(1).asString();
+                        double confidence=k->get(2).asDouble();
+
+                        if (tag=="Name")
+                        {
+                            s->skeleton->setTag(name);
+                            s->name_confidence=confidence;
+                        }
                     }
                 }
             }
@@ -650,6 +657,52 @@ class Retriever : public RFModule
         keysRemap["LHip"]=KeyPointTag::hip_left;
         keysRemap["LKnee"]=KeyPointTag::knee_left;
         keysRemap["LAnkle"]=KeyPointTag::ankle_left;
+        keysRemap["REye"]=KeyPointTag::eye_right;
+        keysRemap["REar"]=KeyPointTag::ear_right;
+        keysRemap["LEye"]=KeyPointTag::eye_left;
+        keysRemap["LEar"]=KeyPointTag::ear_left;
+        keysRemap["LWrist"]=KeyPointTag::wrist_left;
+        keysRemap["LAbductor"]=KeyPointTag::abductor_left;
+        keysRemap["LBThumb"]=KeyPointTag::thumb_base_left;
+        keysRemap["LPThumb"]=KeyPointTag::thumb_proximal_left;
+        keysRemap["LDThumb"]=KeyPointTag::thumb_distal_left;
+        keysRemap["LBIndex"]=KeyPointTag::index_base_left;
+        keysRemap["LPIndex"]=KeyPointTag::index_proximal_left;
+        keysRemap["LIIndex"]=KeyPointTag::index_intermediate_left;
+        keysRemap["LDIndex"]=KeyPointTag::index_distal_left;
+        keysRemap["LBMiddle"]=KeyPointTag::middle_base_left;
+        keysRemap["LPMiddle"]=KeyPointTag::middle_proximal_left;
+        keysRemap["LIMiddle"]=KeyPointTag::middle_intermediate_left;
+        keysRemap["LDMiddle"]=KeyPointTag::middle_distal_left;
+        keysRemap["LBRing"]=KeyPointTag::ring_base_left;
+        keysRemap["LPRing"]=KeyPointTag::ring_proximal_left;
+        keysRemap["LIRing"]=KeyPointTag::ring_intermediate_left;
+        keysRemap["LDRing"]=KeyPointTag::ring_distal_left;
+        keysRemap["LBPinky"]=KeyPointTag::pinky_base_left;
+        keysRemap["LPPinky"]=KeyPointTag::pinky_proximal_left;
+        keysRemap["LIPinky"]=KeyPointTag::pinky_intermediate_left;
+        keysRemap["LDPinky"]=KeyPointTag::pinky_distal_left;
+        keysRemap["RWrist"]=KeyPointTag::wrist_right;
+        keysRemap["RAbductor"]=KeyPointTag::abductor_right;
+        keysRemap["RBThumb"]=KeyPointTag::thumb_base_right;
+        keysRemap["RPThumb"]=KeyPointTag::thumb_proximal_right;
+        keysRemap["RDThumb"]=KeyPointTag::thumb_distal_right;
+        keysRemap["RBIndex"]=KeyPointTag::index_base_right;
+        keysRemap["RPIndex"]=KeyPointTag::index_proximal_right;
+        keysRemap["RIIndex"]=KeyPointTag::index_intermediate_right;
+        keysRemap["RDIndex"]=KeyPointTag::index_distal_right;
+        keysRemap["RBMiddle"]=KeyPointTag::middle_base_right;
+        keysRemap["RPMiddle"]=KeyPointTag::middle_proximal_right;
+        keysRemap["RIMiddle"]=KeyPointTag::middle_intermediate_right;
+        keysRemap["RDMiddle"]=KeyPointTag::middle_distal_right;
+        keysRemap["RBRing"]=KeyPointTag::ring_base_right;
+        keysRemap["RPRing"]=KeyPointTag::ring_proximal_right;
+        keysRemap["RIRing"]=KeyPointTag::ring_intermediate_right;
+        keysRemap["RDRing"]=KeyPointTag::ring_distal_right;
+        keysRemap["RBPinky"]=KeyPointTag::pinky_base_right;
+        keysRemap["RPPinky"]=KeyPointTag::pinky_proximal_right;
+        keysRemap["RIPinky"]=KeyPointTag::pinky_intermediate_right;
+        keysRemap["RDPinky"]=KeyPointTag::pinky_distal_right;
 
         // default values
         camera_configured=false;
