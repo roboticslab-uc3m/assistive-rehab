@@ -840,6 +840,22 @@ SkeletonStd::SkeletonStd()
 
     // head
     tag2key[KeyPointTag::head]->parent.push_back(tag2key[KeyPointTag::shoulder_center]);
+    tag2key[KeyPointTag::head]->child.push_back(tag2key[KeyPointTag::eye_left]);
+    tag2key[KeyPointTag::head]->child.push_back(tag2key[KeyPointTag::ear_left]);
+    tag2key[KeyPointTag::head]->child.push_back(tag2key[KeyPointTag::eye_right]);
+    tag2key[KeyPointTag::head]->child.push_back(tag2key[KeyPointTag::ear_right]);
+
+    // eyeLeft
+    tag2key[KeyPointTag::eye_left]->parent.push_back(tag2key[KeyPointTag::head]);
+
+    // earLeft
+    tag2key[KeyPointTag::ear_left]->parent.push_back(tag2key[KeyPointTag::head]);
+
+    // eyeRight
+    tag2key[KeyPointTag::eye_right]->parent.push_back(tag2key[KeyPointTag::head]);
+
+    // earRight
+    tag2key[KeyPointTag::ear_right]->parent.push_back(tag2key[KeyPointTag::head]);
 
     // shoulderLeft
     tag2key[KeyPointTag::shoulder_left]->parent.push_back(tag2key[KeyPointTag::shoulder_center]);
